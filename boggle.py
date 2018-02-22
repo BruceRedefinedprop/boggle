@@ -35,7 +35,7 @@ def neighbours_of_position(coords):
     # Bottom-left to bottom-right
     bottom_left = (row + 1, col - 1)
     bottom_center = (row + 1, col)
-    bottom_right = (row + 1, col + 1)
+    xbottom_right = (row + 1, col + 1)
     
     
     return [top_left, top_center, top_right,
@@ -86,9 +86,9 @@ def get_dictionary(dictionary_file):
     """
     Load Dictionary file
     """
-    if not dictionary_file.startswith('/'):
-        # if not absolute, then make path relative to our location:
-        dictionary_file = os.path.join(SCRIPT_PATH, dictionary_file)
+    # if not dictionary_file.startswith('/'):
+    #     # if not absolute, then make path relative to our location:
+    #     dictionary_file = os.path.join(SCRIPT_PATH, dictionary_file)
         
     with open(dictionary_file) as f:
         return [w.strip().upper() for w in f]
